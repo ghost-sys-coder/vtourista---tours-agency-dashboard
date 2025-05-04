@@ -10,6 +10,12 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 
+import pkg from  "@syncfusion/ej2-base";
+
+const { registerLicense } = pkg;
+
+registerLicense(import.meta.env.VITE_SYNCFUSION_LICENSE_KEY as string);
+
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
