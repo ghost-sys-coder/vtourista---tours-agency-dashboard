@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link, NavLink} from "react-router";
-import {sidebarItems} from "~/constants";
-import {cn} from "../lib/utils";
+import {sidebarItems} from "@/constants";
+import {cn} from "@/lib/utils";
 
 const NavItems = ({handleClick}: {handleClick?: ()=> void}) => {
     const user = {

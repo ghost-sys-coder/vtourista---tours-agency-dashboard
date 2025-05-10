@@ -10,6 +10,7 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 
+
 import { registerLicense } from  "@syncfusion/ej2-base";
 
 

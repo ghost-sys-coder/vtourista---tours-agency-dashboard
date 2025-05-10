@@ -1,19 +1,10 @@
 import React from 'react'
-import {Header, StatsCard, TripCard} from "../../../components";
+import {Header, StatsCard, TripCard} from "universal-components";
+import {dashboardData, allTrips} from "@/constants";
+
 
 const Dashboard = () => {
     const user = {name: "Tamale Frank"}
-
-    // statistic data
-    const dashboardData = {
-        totalUsers: 12450,
-        usersJoined: {
-            lastMonth: 218, currentMonth: 200
-        },
-        totalTrips: 3210,
-        tripsCreated: {currentMonth: 1200, lastMonth: 1000},
-        userRole: {total: 62, currentMonth: 50, lastMonth: 20}
-    }
 
     // destructure data
     const {totalUsers, usersJoined, totalTrips, tripsCreated, userRole } = dashboardData;
@@ -48,7 +39,26 @@ const Dashboard = () => {
                 </div>
             </section>
 
-            <TripCard/>
+            <section className="flex flex-col gap-6">
+                <section className="container">
+                    <h1 className="text-xl font-semibold text-dark-600">Created Trips</h1>
+
+                    <div className="trip-grid">
+                        {allTrips.slice(0, 4).map(({id, name, imageUrls, tags, price, location}) => (
+                            <TripCard
+                                key={id}
+                                name={name}
+                                imageUrl={imageUrls}
+                                tags={tags}
+                                price={price}
+                                location={location}
+                                id={id.toString()}
+                            />
+                        ))}
+                    </div>
+                </section>
+            </section>
+
         </main>
     )
 }

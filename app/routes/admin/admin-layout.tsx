@@ -1,7 +1,7 @@
 import React from 'react'
 import {Outlet} from "react-router";
 import { SidebarComponent } from "@syncfusion/ej2-react-navigations";
-import {MobileSidebar, NavItems} from "../../../components";
+import {MobileSidebar, NavItems} from "universal-components";
 
 
 
