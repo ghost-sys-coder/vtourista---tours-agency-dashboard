@@ -5,5 +5,6 @@ export default [
         route("dashboard", "routes/admin/dashboard.tsx"),
         route("all-users", "routes/admin/all-users.tsx"),
         route("trips", "routes/admin/all-trips.tsx"),
-    ])
+    ]),
+    route("sign-in", "routes/root/sign-in.tsx"),
 ] satisfies RouteConfig;

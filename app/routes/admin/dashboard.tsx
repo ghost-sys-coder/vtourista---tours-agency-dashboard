@@ -1,10 +1,15 @@
 import React from 'react'
 import {Header, StatsCard, TripCard} from "universal-components";
 import {dashboardData, allTrips} from "@/constants";
+import type { Route } from './+types/dashboard';
+import { getUser } from '@/appwrite/auth';
 
 
-const Dashboard = () => {
-    const user = {name: "Tamale Frank"}
+export const clientLoader = async () => getUser();
+
+
+const Dashboard = ({loaderData}: Route.ComponentProps) => {
+    const user = loaderData as unknown as User || null;
 
     // destructure data
     const {totalUsers, usersJoined, totalTrips, tripsCreated, userRole } = dashboardData;
@@ -44,15 +49,15 @@ const Dashboard = () => {
                     <h1 className="text-xl font-semibold text-dark-600">Created Trips</h1>
 
                     <div className="trip-grid">
-                        {allTrips.slice(0, 4).map(({id, name, imageUrls, tags, price, location}) => (
+                        {allTrips.slice(0, 4).map(({id, name, imageUrls, tags, estimatedPrice, itinerary}) => (
                             <TripCard
                                 key={id}
                                 name={name}
                                 imageUrl={imageUrls}
                                 tags={tags}
-                                price={price}
-                                location={location}
+                                location={itinerary[0].location}
                                 id={id.toString()}
+                                price={estimatedPrice}
                             />
                         ))}
                     </div>

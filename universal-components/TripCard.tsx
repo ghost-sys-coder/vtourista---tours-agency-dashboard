@@ -3,7 +3,7 @@ import {Link, useLocation} from "react-router";
 import {ChipDirective, ChipListComponent, ChipsDirective} from "@syncfusion/ej2-react-buttons";
 import {cn, getFirstWord} from "lib/utils";
 
-const TripCard: FC<TripCardProps> = ({id, imageUrl, name, tags, price, location}) => {
+const TripCard: FC<TripCardProps> = ({id, imageUrl, name, tags, location}) => {
     const {pathname} = useLocation();
 
     console.log(imageUrl);
