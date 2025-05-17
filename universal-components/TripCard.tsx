@@ -4,9 +4,8 @@ import {ChipDirective, ChipListComponent, ChipsDirective} from "@syncfusion/ej2-
 import {cn, getFirstWord} from "lib/utils";
 
 const TripCard: FC<TripCardProps> = ({id, imageUrl, name, tags, location}) => {
-    const {pathname} = useLocation();
+    const { pathname } = useLocation();               
 
-    console.log(imageUrl);
 
     return (
         <Link
